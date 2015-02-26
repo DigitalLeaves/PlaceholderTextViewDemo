@@ -8,7 +8,9 @@ There is a full tutorial on how to build your custom IBDesignable controls for X
 
 ## Usage
 
-Just drag & drop the file PlaceholderTextView.swift into your project. Then in the Interface Builder, add a UITextView to any of your UIViewControllers. Click on the Identity Inspector (the icon that looks like an id card or a user profile page on the utilities right panel). Write "PlaceholderTextView" in the "Class" field, and you are ready! 
+Just drag & drop the file PlaceholderTextView.swift into your project. Then in the Interface Builder, add a UITextView to any of your UIViewControllers. 
+
+Click on the Identity Inspector (the icon that looks like an id card or a user profile page on the utilities right panel). Write "PlaceholderTextView" in the "Class" field, and you are ready! 
 
 Use the Attribute Inspector to change the placeholder text and color. You can also change the corner radius for rounded edges, and set the width and color of the border around the PlaceholderTextView.
 
