@@ -1,6 +1,6 @@
-# PlaceholderTextViewDemo
+# PlaceholderTextView
 
-A IBDesignable subclass of UITextView with a placeholder behaving like a UITextfield
+PlaceHolderTextView is a IBDesignable subclass of UITextView with a placeholder behaving like a UITextfield, which means that if no text is present, the placeholder will be showing. This makes it easier to integrate UITextViews in combination of UITextFields where all the elements should have placeholders.
 
 <img align="left" vspace="5" hspace="5" src="http://digitalleaves.com/blog/wp-content/uploads/2015/02/placeholderFinal.gif">
 
