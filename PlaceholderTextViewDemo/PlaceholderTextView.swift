@@ -31,7 +31,7 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
         }
     }
     /** Border color for the text view */
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable var cornerRadius: CGFloat = 6.0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
             self.layer.masksToBounds = cornerRadius > 0.0
@@ -61,24 +61,16 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
     #if !TARGET_INTERFACE_BUILDER
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        listenForTextChangedNotifications()
     }
 
     /** Override common init, for manual allocation */
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        listenForTextChangedNotifications()
     }
     #endif
 
-    func setup() {
-        // appearance.
-        self.layer.cornerRadius = 6.0
-        
-        // listen for notifications when starting edition
-        listenForTextChangedNotifications()
-    }
-    
     /** Initializes the placeholder text view, waiting for a notification of text changed */
     func listenForTextChangedNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textChangedForPlaceholderTextView:", name:UITextViewTextDidChangeNotification , object: self)
