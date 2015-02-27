@@ -80,7 +80,7 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
     /** willMoveToWindow will get called with a nil argument when the window is about to dissapear */
     override func willMoveToWindow(newWindow: UIWindow?) {
         super.willMoveToWindow(newWindow)
-        if newWindow == nil { NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextViewTextDidChangeNotification, object: self) }
+        if newWindow == nil { NSNotificationCenter.defaultCenter().removeObserver(self) }
         else { listenForTextChangedNotifications() }
     }
 
