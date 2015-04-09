@@ -65,8 +65,8 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
     }
 
     /** Override common init, for manual allocation */
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
         listenForTextChangedNotifications()
     }
     #endif
@@ -95,7 +95,7 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
         super.drawRect(rect)
         
         // in case we don't have a text, put the placeholder (if any)
-        if countElements(self.text) == 0 && self.placeholder != nil {
+        if count(self.text) == 0 && self.placeholder != nil {
             let baseRect = placeholderBoundsContainedIn(self.bounds)
             let font = self.font ?? self.typingAttributes[NSFontAttributeName] as? UIFont ?? UIFont.systemFontOfSize(UIFont.systemFontSize())
             
@@ -104,12 +104,12 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
             // build the custom paragraph style for our placeholder text
             var customParagraphStyle: NSMutableParagraphStyle!
             if let defaultParagraphStyle =  typingAttributes[NSParagraphStyleAttributeName] as? NSParagraphStyle {
-                customParagraphStyle = defaultParagraphStyle.mutableCopy() as NSMutableParagraphStyle
-            } else { customParagraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle }
+                customParagraphStyle = defaultParagraphStyle.mutableCopy() as! NSMutableParagraphStyle
+            } else { customParagraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle }
             // set attributes
             customParagraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
             customParagraphStyle.alignment = self.textAlignment
-            let attributes = [NSFontAttributeName: font, NSParagraphStyleAttributeName: customParagraphStyle.copy() as NSParagraphStyle, NSForegroundColorAttributeName: self.placeholderColor]
+            let attributes = [NSFontAttributeName: font, NSParagraphStyleAttributeName: customParagraphStyle.copy() as! NSParagraphStyle, NSForegroundColorAttributeName: self.placeholderColor]
             // draw in rect.
             self.placeholder?.drawInRect(baseRect, withAttributes: attributes)
         }
