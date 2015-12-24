@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         textView.text = ""
     }
 
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.textView.resignFirstResponder()
         self.view.endEditing(true)
     }
