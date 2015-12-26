@@ -50,7 +50,7 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
     override var contentInset: UIEdgeInsets { didSet { setNeedsDisplay() } }
     
     /** Setting font needs a call to setNeedsDisplay() */
-    override var font: UIFont! { didSet { setNeedsDisplay() } }
+    override var font: UIFont? { didSet { setNeedsDisplay() } }
     
     /** Setting text alignment needs a call to setNeedsDisplay() */
     override var textAlignment: NSTextAlignment { didSet { setNeedsDisplay() } }
@@ -59,7 +59,7 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
     
     /** Override coder init, for IB/XIB compatibility */
     #if !TARGET_INTERFACE_BUILDER
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         listenForTextChangedNotifications()
     }
@@ -95,7 +95,7 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
         super.drawRect(rect)
         
         // in case we don't have a text, put the placeholder (if any)
-        if count(self.text) == 0 && self.placeholder != nil {
+        if self.text.characters.count == 0 && self.placeholder != nil {
             let baseRect = placeholderBoundsContainedIn(self.bounds)
             let font = self.font ?? self.typingAttributes[NSFontAttributeName] as? UIFont ?? UIFont.systemFontOfSize(UIFont.systemFontSize())
             
@@ -120,10 +120,8 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
         let baseRect = UIEdgeInsetsInsetRect(containerBounds, UIEdgeInsetsMake(kPlaceholderTextViewInsetSpan, kPlaceholderTextViewInsetSpan/2.0, 0, 0))
         
         // adjust typing and selection attributes
-        if typingAttributes != nil {
             if let paragraphStyle = typingAttributes[NSParagraphStyleAttributeName] as? NSParagraphStyle {
-                baseRect.rectByOffsetting(dx: paragraphStyle.headIndent, dy: paragraphStyle.firstLineHeadIndent)
-            }
+               return baseRect.offsetBy(dx: paragraphStyle.headIndent, dy: paragraphStyle.firstLineHeadIndent)
         }
         
         return baseRect
