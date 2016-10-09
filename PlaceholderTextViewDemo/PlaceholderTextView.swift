@@ -50,7 +50,7 @@ private let kPlaceholderTextViewInsetSpan: CGFloat = 8
     override var contentInset: UIEdgeInsets { didSet { setNeedsDisplay() } }
     
     /** Setting font needs a call to setNeedsDisplay() */
-    override var font: UIFont! { didSet { setNeedsDisplay() } }
+    override var font: UIFont? { didSet { setNeedsDisplay() } }
     
     /** Setting text alignment needs a call to setNeedsDisplay() */
     override var textAlignment: NSTextAlignment { didSet { setNeedsDisplay() } }
