@@ -23,11 +23,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func clearTextView(sender: AnyObject) {
+    @IBAction func clearTextView(_ sender: AnyObject) {
         textView.text = ""
     }
 
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.textView.resignFirstResponder()
         self.view.endEditing(true)
     }

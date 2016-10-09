@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>708B0732-73B4-44F6-85B8-7D7039C60FE6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PlaceholderTextViewDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>88378DCBB8E491513F1FE201DA29CED28A0E9DDB</key>
+		<string>https://github.com/DigitalLeaves/PlaceholderTextViewDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PlaceholderTextViewDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>88378DCBB8E491513F1FE201DA29CED28A0E9DDB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/DigitalLeaves/PlaceholderTextViewDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>88378DCBB8E491513F1FE201DA29CED28A0E9DDB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>88378DCBB8E491513F1FE201DA29CED28A0E9DDB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PlaceholderTextViewDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
